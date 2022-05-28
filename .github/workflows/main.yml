@@ -21,10 +21,10 @@ jobs:
       - name: 'Tableau Workbook Deployments Action'
         uses: jayamanikharyono/tableau-workbook-action@v1.4
         env:
-          USERNAME: ${{ secrets.TABLEAU_DEPLOYMENT_USERNAME }}
-          PASSWORD: ${{ secrets.TABLEAU_DEPLOYMENT_PASSWORD }}
-          SITE_ID: ${{ secrets.TABLEAU_DEPLOYMENT_SITE_ID }}
-          TABLEAU_URL: ${{ secrets.TABLEAU_DEPLOYMENT_TABLEAU_URL }}
+          USERNAME: saad.rehman456@gmail.com
+          PASSWORD: ABS@@d123
+          SITE_ID: saadpractice
+          TABLEAU_URL: https://prod-apsoutheast-a.online.tableau.com/#/site/saadpractice/personalSpace
         with:
           workbook_dir: tableau_workbook/workbooks
           env: production
