@@ -1,0 +1,31 @@
+name: Tableau Workbook Workflows
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'tableau_workbook/**'
+      
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'tableau_workbook/**'
+
+  workflow_dispatch:
+
+jobs:
+  tableau-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: 'Tableau Workbook Deployments Action'
+        uses: ./action/tableau-workbook-action
+        env:
+          USERNAME: ${{ secrets.TABLEAU_DEPLOYMENT_USERNAME }}
+          PASSWORD: ${{ secrets.TABLEAU_DEPLOYMENT_PASSWORD }}
+          SITE_ID: ${{ secrets.TABLEAU_DEPLOYMENT_SITE_ID }}
+          TABLEAU_URL: ${{ secrets.TABLEAU_DEPLOYMENT_TABLEAU_URL }}
+        with:
+          workbook_dir: tableau_workbook/workbooks
+          env: production
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
