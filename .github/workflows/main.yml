@@ -7,7 +7,7 @@ on:
       - 'tableau_workbook/**'
       
   pull_request:
-    branches: [ main ]
+    branches: [ main ] 
     paths:
       - 'tableau_workbook/**'
 
