@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: 'Tableau Workbook Deployments Action'
-        uses: ./action/tableau-workbook-action
+        uses: jayamanikharyono/tableau-workbook-action@v1.4
         env:
           USERNAME: ${{ secrets.TABLEAU_DEPLOYMENT_USERNAME }}
           PASSWORD: ${{ secrets.TABLEAU_DEPLOYMENT_PASSWORD }}
