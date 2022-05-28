@@ -28,4 +28,4 @@ jobs:
         with:
           workbook_dir: tableau_workbook/workbooks
           env: production
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          repo_token: ${{ secrets.GIT_TOKEN }}
